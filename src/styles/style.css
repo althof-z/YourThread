@@ -1,0 +1,154 @@
+/* Reset some default styles
+body,
+h1,
+p,
+button,
+input,
+textarea {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* App styles */
+.app {
+  background-color: #f0f0f0;
+}
+
+.loading {
+  position: sticky;
+  top: 0;
+}
+
+.detail-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* LoginPage styles */
+.auth-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth-title {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-link,
+.register-link {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.login-link:hover,
+.register-link:hover {
+  color: #0056b3;
+}
+
+/* ThreadItem styles */
+.thread-item {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.thread-item:hover {
+  background-color: #e7fffb;
+}
+
+/* CommentInput styles */
+.comment-input {
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.comment-input input,
+.comment-input button {
+  margin-top: 10px;
+}
+
+.custom-icon {
+  font-size: 1.2em; /* Adjust icon size */
+}
+
+/* ThreadInput styles */
+.thread-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.thread-input input,
+.thread-input textarea,
+.thread-input button {
+  margin-top: 10px;
+}
+
+.thread-input textarea {
+  height: 150px;
+  resize: none;
+}
+
+/* CategoryItem styles */
+.active-category {
+  background-color: gray;
+  color: white;
+}
+
+/* ThreadDetail styles */
+.thread-detail {
+  width: 100%;
+  max-width: 1000px;
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.thread-detail__header,
+.thread-detail__body,
+.thread-detail__footer {
+  margin-bottom: 20px;
+}
+
+.thread-detail__title {
+  font-size: 24px;
+  color: #333;
+}
+
+.thread-detail__body {
+  font-size: 16px;
+  color: #666;
+}
+
+.detail_footer {
+  font-size: 14px;
+  color: #999;
+}
+
+.thread-detail__owner {
+  display: flex;
+  align-items: center;
+}
+
+.thread-detail__owner img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 5px;
+  margin-left: 10px;
+}
+
+/* Buttons */
