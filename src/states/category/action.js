@@ -20,7 +20,7 @@ function asyncGetCategories() {
       dispatch(receiveCategoriesActionCreator(categories));
     } catch (error) {
       // show error message
-
+      alert(error.message);
     }
   };
 }

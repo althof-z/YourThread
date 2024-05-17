@@ -21,6 +21,7 @@ function asyncReceiveLeaderboard() {
       dispatch(receiveLeaderboardActionCenter(leaderboard));
     } catch (error) {
       // show error message
+      alert(error.message);
     }
     dispatch(hideLoading());
   };
