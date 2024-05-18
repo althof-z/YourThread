@@ -1,6 +1,7 @@
 import { showLoading, hideLoading } from 'react-redux-loading-bar';
+import { toast } from 'react-toastify';
 import api from '../../utils/api';
-
+import 'react-toastify/dist/ReactToastify.css';
 import { receiveThreadsActionCreator } from '../threads/action';
 import { receiveUsersActionCreator } from '../users/action';
 
@@ -15,7 +16,8 @@ function asyncPopulateUsersandTalks() {
       dispatch(receiveUsersActionCreator(users));
     } catch (error) {
       // show error message
-      alert(error.message);
+      toast.error(error.message);
+      // alert(error.message);
     }
     dispatch(hideLoading());
   };

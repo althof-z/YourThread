@@ -10,6 +10,7 @@ import {
   describe, beforeEach, afterEach, it, expect, vi,
 } from 'vitest';
 import { showLoading, hideLoading } from 'react-redux-loading-bar';
+import { toast } from 'react-toastify';
 import api from '../../utils/api';
 import { setIsPreloadActionCreator, asyncPreloadProcess } from './action';
 import { setAuthUserActionCreator } from '../authUser/action';
@@ -41,7 +42,9 @@ describe('asyncPreloadProcess', () => {
 
     // assert
     expect(dispatch).toHaveBeenCalledWith(showLoading());
-    expect(dispatch).toHaveBeenCalledWith(setAuthUserActionCreator(fakePreloadResponse));
+    expect(dispatch).toHaveBeenCalledWith(
+      setAuthUserActionCreator(fakePreloadResponse),
+    );
     expect(dispatch).toHaveBeenCalledWith(setIsPreloadActionCreator(false));
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
   });
@@ -54,14 +57,14 @@ describe('asyncPreloadProcess', () => {
     const dispatch = vi.fn();
 
     // mock alert
-    window.alert = vi.fn();
+    toast.error = vi.fn();
 
     // action
     await asyncPreloadProcess()(dispatch);
 
     // assert
     expect(dispatch).toHaveBeenCalledWith(showLoading());
-    expect(window.alert).toHaveBeenCalledWith(fakeErrorResponse.message);
+    expect(toast.error).toHaveBeenCalledWith(fakeErrorResponse.message);
     expect(dispatch).toHaveBeenCalledWith(setAuthUserActionCreator(null));
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
   });
