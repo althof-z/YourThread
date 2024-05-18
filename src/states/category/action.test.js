@@ -9,6 +9,7 @@
 import {
   describe, beforeEach, afterEach, it, expect, vi,
 } from 'vitest';
+import { toast } from 'react-toastify';
 import api from '../../utils/api';
 import { receiveCategoriesActionCreator, asyncGetCategories } from './action';
 
@@ -51,12 +52,12 @@ describe('asyncGetCategories', () => {
     const dispatch = vi.fn();
 
     // mock alert
-    window.alert = vi.fn();
+    toast.error = vi.fn();
 
     // action
     await asyncGetCategories()(dispatch);
 
     // assert
-    expect(window.alert).toHaveBeenCalledWith(fakeErrorResponse.message);
+    expect(toast.error).toHaveBeenCalledWith(fakeErrorResponse.message);
   });
 });

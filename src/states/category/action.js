@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import api from '../../utils/api';
 
 const ActionTypes = {
@@ -20,7 +21,7 @@ function asyncGetCategories() {
       dispatch(receiveCategoriesActionCreator(categories));
     } catch (error) {
       // show error message
-      alert(error.message);
+      toast.error(error.message);
     }
   };
 }

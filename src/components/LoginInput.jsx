@@ -12,18 +12,35 @@ function LoginInput({ login }) {
       <div className="form-group">
         <span className="text-info">Email</span>
         <br />
-        <input type="email" value={email} onChange={onEmailChange} className="form-control" />
+        <input
+          type="email"
+          placeholder="email"
+          value={email}
+          onChange={onEmailChange}
+          className="form-control"
+        />
       </div>
       <div className="form-group">
         <span htmlFor="password" className="text-info">
           Password
         </span>
         <br />
-        <input type="password" value={password} onChange={onPasswordChange} className="form-control" />
+        <input
+          type="password"
+          placeholder="password"
+          value={password}
+          onChange={onPasswordChange}
+          className="form-control"
+        />
       </div>
       <br />
       <div className="form-group justify-content-end">
-        <input type="button" onClick={() => login({ email, password })} className="btn btn-primary btn-md" value="Login" />
+        <input
+          type="button"
+          onClick={() => login({ email, password })}
+          className="btn btn-primary btn-md"
+          value="Login"
+        />
       </div>
     </form>
   );

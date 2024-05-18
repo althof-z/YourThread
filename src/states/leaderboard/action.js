@@ -1,4 +1,5 @@
 import { showLoading, hideLoading } from 'react-redux-loading-bar';
+import { toast } from 'react-toastify';
 import api from '../../utils/api';
 
 const ActionTypes = {
@@ -21,7 +22,7 @@ function asyncReceiveLeaderboard() {
       dispatch(receiveLeaderboardActionCenter(leaderboard));
     } catch (error) {
       // show error message
-      alert(error.message);
+      toast.error(error.message);
     }
     dispatch(hideLoading());
   };
