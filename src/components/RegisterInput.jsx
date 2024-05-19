@@ -16,20 +16,20 @@ function RegisterInput({ register }) {
             Name
           </span>
           <br />
-          <input type="text" value={name} onChange={onNameChange} className="form-control" />
+          <input type="text" placeholder="name" value={name} onChange={onNameChange} className="form-control" />
         </div>
         <span htmlFor="email" className="text-info">
           Email
         </span>
         <br />
-        <input type="email" value={email} onChange={onEmailChange} className="form-control" />
+        <input type="email" placeholder="email" value={email} onChange={onEmailChange} className="form-control" />
       </div>
       <div className="form-group">
         <span htmlFor="password" className="text-info">
           Password
         </span>
         <br />
-        <input type="password" value={password} onChange={onPasswordChange} className="form-control" />
+        <input type="password" placeholder="password" value={password} onChange={onPasswordChange} className="form-control" />
       </div>
 
       <br />

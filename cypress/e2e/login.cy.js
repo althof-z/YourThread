@@ -6,6 +6,10 @@
  *   - should display alert when username and password are wrong
  *   - should display homepage when username and password are correct
  */
+import {
+  describe, beforeEach, it, expect,
+} from 'vitest';
+import { cy } from 'cypress';
 
 describe('Login', () => {
   beforeEach(() => {
@@ -23,7 +27,6 @@ describe('Login', () => {
       expect(str).to.equal('"id" is not allowed to be empty');
     });
   });
-
 
   it('should display alert when password is empty', () => {
     cy.get('input[type="button"]').click();
@@ -46,7 +49,8 @@ describe('Login', () => {
     cy.get('input[type="password"]').type('akuakuaku');
     cy.get('input[type="button"]').click();
 
-    cy.get('li').contains(/^Home$/).should('be.visible');
+    cy.get('li')
+      .contains(/^Home$/)
+      .should('be.visible');
   });
-
 });
