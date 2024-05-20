@@ -13,7 +13,7 @@ function ThreadInput({ addThread }) {
       <input type="text" placeholder="category" value={category} onChange={onCategoryChange} className="form-control" />
       <textarea type="text" placeholder="What are you thinking?" value={body} onChange={onTextChange} className="form-control" />
       <p className="thread-input__char-left" />
-      <button type="submit" onClick={() => addThread({ title, body, category })} className="btn btn-primary" value="addThread">
+      <button type="submit" onClick={() => addThread({ title, body, category })} className="btn btn-primary">
         Create Thread
       </button>
     </div>

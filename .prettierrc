@@ -3,6 +3,5 @@
     "singleQuote": true,
     "maxLineLength": 120,
     "trailingComma": "all",
-    "bracketSameLine": false,
-    "multiLine": "always"
+    "bracketSameLine": false
 }
