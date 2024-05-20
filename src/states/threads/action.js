@@ -78,7 +78,7 @@ function asyncUpVoteThread(threadId, userId) {
       await api.upVoteThread(threadId);
       dispatch(upVoteThreadActionCreator({ threadId, userId }));
     } catch (error) {
-      console.log(error);
+      // show error message
     }
   };
 }
@@ -90,7 +90,6 @@ function asyncDownVoteThread(threadId, userId) {
       dispatch(downVoteThreadActionCreator({ threadId, userId }));
     } catch (error) {
       // show error message
-      console.log(error);
     }
   };
 }
@@ -102,7 +101,6 @@ function asyncNeutralizeVoteThread(threadId, userId) {
       dispatch(neturalizeVoteThreadActionCreator({ threadId, userId }));
     } catch (error) {
       // show error message
-      console.log(error);
     }
   };
 }
