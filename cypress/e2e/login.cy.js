@@ -6,11 +6,6 @@
  *   - should display alert when username and password are wrong
  *   - should display homepage when username and password are correct
  */
-import {
-  describe, beforeEach, it, expect,
-} from 'vitest';
-import { cy } from 'cypress';
-
 describe('Login', () => {
   beforeEach(() => {
     cy.visit('http://localhost:5173/');
