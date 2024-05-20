@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import useInput from '../hooks/useInput';
 
-function LoginInput({ login }) {
+function LoginInput({ }) {
   const [email, onEmailChange] = useInput('');
   const [password, onPasswordChange] = useInput('');
 
