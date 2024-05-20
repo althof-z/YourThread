@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /**
  * - Login spec
  *   - should display login page correctly
@@ -23,7 +24,6 @@ describe('Login', () => {
     });
   });
 
-
   it('should display alert when password is empty', () => {
     cy.get('input[type="button"]').click();
     cy.on('window:alert', (str) => {
@@ -45,7 +45,8 @@ describe('Login', () => {
     cy.get('input[type="password"]').type('akuakuaku');
     cy.get('input[type="button"]').click();
 
-    cy.get('li').contains(/^Home$/).should('be.visible');
+    cy.get('li')
+      .contains(/^Home$/)
+      .should('be.visible');
   });
-
 });

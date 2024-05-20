@@ -100,7 +100,6 @@ function asyncUpVoteComment(threadId, commentId, userId) {
       dispatch(upVoteCommentActionCreator(commentId, userId));
     } catch (error) {
       // show error message
-      console.log(error);
     }
     dispatch(hideLoading());
   };
@@ -114,7 +113,6 @@ function asyncDownVoteComment(threadId, commentId, userId) {
       dispatch(downVoteCommentActionCreator(commentId, userId));
     } catch (error) {
       // show error message
-      console.log(error);
     }
     dispatch(hideLoading());
   };
@@ -128,7 +126,6 @@ function asyncNeutralizeVoteComment(threadId, commentId, userId) {
       dispatch(neutralizeVoteCommentActionCreator(commentId, userId));
     } catch (error) {
       // show error message
-      console.log(error);
     }
     dispatch(hideLoading());
   };

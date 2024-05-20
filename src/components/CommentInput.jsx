@@ -13,7 +13,13 @@ function CommentInput({ addComment }) {
 
         <div className="mb-3 row">
           <div className="col-10">
-            <input type="text" value={content} onChange={onContentChange} className="form-control" />
+            <input
+              type="text"
+              placeholder="comment"
+              value={content}
+              onChange={onContentChange}
+              className="form-control"
+            />
           </div>
           <div className="col-2">
             <button
