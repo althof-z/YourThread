@@ -7,10 +7,17 @@ function Navigation({ authUser, signOut }) {
   const { avatar, name } = authUser;
 
   return (
-
     <nav className="navbar navbar-expand-lg navbar-light bg-body-tertiary">
       <div className="container-fluid">
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span className="navbar-toggler-icon" />
         </button>
         {/* Collapsible wrapper */}
@@ -27,7 +34,9 @@ function Navigation({ authUser, signOut }) {
                 Leaderboard
               </Link>
             </li>
-            <li className="nav-item">{/* <Link className="nav-link" to="/"><a >Leaderboard</a></Link> */}</li>
+            <li className="nav-item">
+              {/* <Link className="nav-link" to="/"><a >Leaderboard</a></Link> */}
+            </li>
           </ul>
         </div>
         {/* Collapsible wrapper */}
@@ -41,8 +50,22 @@ function Navigation({ authUser, signOut }) {
               {name}
             </span>
           </div>
-          <img src={avatar} alt={name} title={name} className="rounded-circle" height="25" loading="lazy" />
-          <button className="ms-3 btn btn-light border border-0" type="button" aria-label="Log-out" onClick={signOut}><IoMdLogOut size="2em" /></button>
+          <img
+            src={avatar}
+            alt={name}
+            title={name}
+            className="rounded-circle"
+            height="25"
+            loading="lazy"
+          />
+          <button
+            className="ms-3 btn btn-light border border-0"
+            type="button"
+            aria-label="Log-out"
+            onClick={signOut}
+          >
+            <IoMdLogOut size="2em" />
+          </button>
         </div>
         {/* Right elements */}
       </div>
