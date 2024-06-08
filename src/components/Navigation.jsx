@@ -21,8 +21,8 @@ function Navigation({ authUser, signOut }) {
         </button>
         {/* Collapsible wrapper */}
         <div className="collapse navbar-collapse" id="navbarText">
-          <img src="/public/logo_ic.png" alt="logo" height="50" />
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <img src="/logo_ic.png" alt="logo" height="60" />
+          <ul className="navbar-nav ms-3 me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <Link className="nav-link" to="/">
                 Home

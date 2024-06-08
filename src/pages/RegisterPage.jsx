@@ -22,9 +22,9 @@ function RegisterPage() {
             <div className="row justify-content-center">
               <div className="col-md-8">
                 <div className="mb-4">
-                  <h3 className="text-white">Sign In</h3>
+                  <h3 className="text-white">Sign Up</h3>
                   <p className="mb-4 text-white">
-                    Log in to Join Our Community
+                    If You are New Here, Come Register
                   </p>
                 </div>
                 <RegisterInput register={onRegister} />
@@ -32,7 +32,7 @@ function RegisterPage() {
             </div>
           </div>
           <div className="col-md-6">
-            <img src="/public/logo_xl.png" className="img-fluid" alt="logo" />
+            <img src="/logo_xl.png" className="img-fluid" alt="logo" />
           </div>
         </div>
       </div>
