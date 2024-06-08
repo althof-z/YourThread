@@ -13,6 +13,7 @@ textarea {
 /* App styles */
 .app {
   background-color: #498CAC;
+  font-family: "Poppins", sans-serif;
 }
 
 .loading {

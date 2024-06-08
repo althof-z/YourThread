@@ -16,7 +16,7 @@ function LoginInput({ login }) {
           value={email}
           onChange={onEmailChange}
           className="form-control"
-          id="email"
+          data-testid="email"
         />
       </div>
       <div className="form-group last mb-4">

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { IoMdLogOut } from 'react-icons/io';
 
 function Navigation({ authUser, signOut }) {
   const { avatar, name } = authUser;
@@ -22,7 +21,7 @@ function Navigation({ authUser, signOut }) {
         </button>
         {/* Collapsible wrapper */}
         <div className="collapse navbar-collapse" id="navbarText">
-          <span className="navbar-brand"> Your </span>
+          <img src="/public/logo_ic.png" alt="logo" height="50" />
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <Link className="nav-link" to="/">
@@ -42,30 +41,38 @@ function Navigation({ authUser, signOut }) {
         {/* Collapsible wrapper */}
 
         {/* Right elements */}
-        <div className="d-flex align-items-center">
+        <div className="d-flex align-items-center dropdown">
           <div className="collapse navbar-collapse" id="navbarText">
             <span className="navbar-brand">
-              {' '}
-              Hello,
-              {name}
+              Hello, &nbsp;
+              <b>{name}</b>
             </span>
           </div>
-          <img
-            src={avatar}
-            alt={name}
-            title={name}
-            className="rounded-circle"
-            height="25"
-            loading="lazy"
-          />
-          <button
-            className="ms-3 btn btn-light border border-0"
-            type="button"
-            aria-label="Log-out"
-            onClick={signOut}
-          >
-            <IoMdLogOut size="2em" />
-          </button>
+          <div>
+            <div role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img
+                className="rounded-circle nav-link dropdown-toggle"
+                src={avatar}
+                alt={name}
+                title={name}
+                height="50"
+                loading="lazy"
+              />
+            </div>
+
+            <ul className="dropdown-menu">
+              <li>
+                <button
+                  className="dropdown-item"
+                  type="button"
+                  aria-label="Log-out"
+                  onClick={signOut}
+                >
+                  Log out
+                </button>
+              </li>
+            </ul>
+          </div>
         </div>
         {/* Right elements */}
       </div>

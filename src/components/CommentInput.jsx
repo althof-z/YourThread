@@ -8,7 +8,7 @@ function CommentInput({ addComment }) {
   return (
     <form className="form">
       <div className="form-group">
-        <h3 className="text-info">Give A Comment</h3>
+        <h3 className="text-white">Give A Comment</h3>
         <br />
 
         <div className="mb-3 row">
