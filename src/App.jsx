@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react';
-import {
-  Routes, Route, useNavigate, Router,
-} from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Loading from './components/Loading';
 import LoginPage from './pages/LoginPage';
@@ -40,12 +38,10 @@ function App() {
     return (
       <>
         <Loading />
-        <Router>
-          <Routes>
-            <Route path="/" element={<LoginPage />} />
-            <Route path="/register" element={<RegisterPage />} />
-          </Routes>
-        </Router>
+        <Routes>
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+        </Routes>
       </>
     );
   }
