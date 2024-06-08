@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import RegisterInput from '../components/RegisterInput';
 import { asyncRegisterUser } from '../states/users/action';
@@ -15,18 +15,24 @@ function RegisterPage() {
     }
   };
   return (
-
-    <div id="login" className="">
-      <h3 className="text-center text-white pt-5">Register form</h3>
+    <div className="content">
       <div className="container">
-        <div id="login-row" className="row justify-content-center align-items-center">
-          <div id="login-column" className="col-md-6">
-            <div id="login-box" className="col-md-12">
-              <RegisterInput register={onRegister} />
+        <div className="row">
+          <div className="col-md-6 contents">
+            <div className="row justify-content-center">
+              <div className="col-md-8">
+                <div className="mb-4">
+                  <h3 className="text-white">Sign In</h3>
+                  <p className="mb-4 text-white">
+                    Log in to Join Our Community
+                  </p>
+                </div>
+                <RegisterInput register={onRegister} />
+              </div>
             </div>
-            <Link to="/" className="login-link">
-              Go to Login
-            </Link>
+          </div>
+          <div className="col-md-6">
+            <img src="/public/logo_xl.png" className="img-fluid" alt="logo" />
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
 import LoginInput from '../components/LoginInput';
 import { asyncSetAuthUser } from '../states/authUser/action';
 
@@ -8,19 +8,25 @@ function LoginPage() {
   const dispatch = useDispatch();
 
   return (
-    <div id="login">
-      <h3 className="text-center text-white pt-5">Login form</h3>
+    <div className="content">
       <div className="container">
-        <div id="login-row" className="row justify-content-center align-items-center">
-          <div id="login-column" className="col-md-6">
-            <div id="login-box" className="col-md-12">
-              <LoginInput
-                login={({ email, password }) => dispatch(asyncSetAuthUser({ email, password }))}
-              />
-              <Link to="/register" className="register-link">
-                Go to Register
-              </Link>
-
+        <div className="row">
+          <div className="col-md-6">
+            <img src="/public/logo_xl.png" className="img-fluid" />
+          </div>
+          <div className="col-md-6 contents">
+            <div className="row justify-content-center">
+              <div className="col-md-8">
+                <div className="mb-4">
+                  <h3 className="text-white">Sign In</h3>
+                  <p className="mb-4 text-white">
+                    Log in to Join Our Community
+                  </p>
+                </div>
+                <LoginInput
+                  login={({ email, password }) => dispatch(asyncSetAuthUser({ email, password }))}
+                />
+              </div>
             </div>
           </div>
         </div>

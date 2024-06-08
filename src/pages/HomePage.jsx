@@ -52,7 +52,7 @@ function HomePage() {
       <section>
         <div className="container my-3 text-body">
           <ThreadInput addThread={onAddThread} />
-          <h4 className="text-body mb-2">category </h4>
+          <h4 className="text-white mb-2">Tags </h4>
           <div>
             <CategoryList
               categories={categories}
@@ -61,16 +61,18 @@ function HomePage() {
             />
           </div>
           <div className="d-flex justify-content-between align-items-center mb-4">
-            <h4 className="text-body mb-0">See Threads </h4>
+            <h4 className="text-white mb-0">See Threads </h4>
           </div>
-          <ThreadList
-            threads={threadList}
-            category={activeCategory}
-            upVote={onUpVote}
-            downVote={onDownVote}
-            neutralizeVote={onNeutralizeVote}
-            authUser={authUser}
-          />
+          <div className="pb-3">
+            <ThreadList
+              threads={threadList}
+              category={activeCategory}
+              upVote={onUpVote}
+              downVote={onDownVote}
+              neutralizeVote={onNeutralizeVote}
+              authUser={authUser}
+            />
+          </div>
         </div>
       </section>
     </div>

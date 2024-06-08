@@ -15,6 +15,7 @@ import {
 import { cleanup, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import matchers from '@testing-library/jest-dom/matchers';
+import { BrowserRouter } from 'react-router-dom';
 import RegisterInput from './RegisterInput';
 
 expect.extend(matchers);
@@ -26,7 +27,11 @@ describe('RegisterInput', () => {
 
   it('should handle name typing correctly', async () => {
     // arrange
-    render(<RegisterInput register={() => {}} />);
+    render(
+      <BrowserRouter>
+        <RegisterInput register={() => {}} />
+      </BrowserRouter>,
+    );
     const nameInput = await screen.getByPlaceholderText('name');
 
     // action
@@ -38,7 +43,11 @@ describe('RegisterInput', () => {
 
   it('should handle email typing correctly', async () => {
     // arrange
-    render(<RegisterInput register={() => {}} />);
+    render(
+      <BrowserRouter>
+        <RegisterInput register={() => {}} />
+      </BrowserRouter>,
+    );
     const emailInput = await screen.getByPlaceholderText('email');
 
     // action
@@ -50,7 +59,11 @@ describe('RegisterInput', () => {
 
   it('should handle password typing correctly', async () => {
     // arrange
-    render(<RegisterInput register={() => {}} />);
+    render(
+      <BrowserRouter>
+        <RegisterInput register={() => {}} />
+      </BrowserRouter>,
+    );
     const passwordInput = await screen.getByPlaceholderText('password');
 
     // action
@@ -63,7 +76,11 @@ describe('RegisterInput', () => {
   it('should call register function when register button is clicked', async () => {
     // arrange
     const registerMock = vi.fn();
-    render(<RegisterInput register={registerMock} />);
+    render(
+      <BrowserRouter>
+        <RegisterInput register={registerMock} />
+      </BrowserRouter>,
+    );
     const nameInput = await screen.getByPlaceholderText('name');
     const emailInput = await screen.getByPlaceholderText('email');
     const passwordInput = await screen.getByPlaceholderText('password');

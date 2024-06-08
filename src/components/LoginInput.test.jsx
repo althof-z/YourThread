@@ -9,12 +9,12 @@
 
 import React from 'react';
 import {
-  describe, it, expect, vi,
-  afterEach,
+  describe, it, expect, vi, afterEach,
 } from 'vitest';
 import { cleanup, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import matchers from '@testing-library/jest-dom/matchers';
+import { BrowserRouter } from 'react-router-dom';
 import LoginInput from './LoginInput';
 
 expect.extend(matchers);
@@ -26,7 +26,11 @@ describe('LoginInput', () => {
 
   it('should handle email typing correctly', async () => {
     // arrange
-    render(<LoginInput login={() => { }} />);
+    render(
+      <BrowserRouter>
+        <LoginInput login={() => {}} />
+      </BrowserRouter>,
+    );
     const emailInput = await screen.getByPlaceholderText('email');
 
     // action
@@ -38,7 +42,11 @@ describe('LoginInput', () => {
 
   it('should handle password typing correctly', async () => {
     // Arrange
-    render(<LoginInput login={() => { }} />);
+    render(
+      <BrowserRouter>
+        <LoginInput login={() => {}} />
+      </BrowserRouter>,
+    );
     const passwordInput = await screen.getByPlaceholderText('password');
 
     // Action
@@ -51,7 +59,11 @@ describe('LoginInput', () => {
   it('should call login function when login button is clicked', async () => {
     // Arrange
     const loginMock = vi.fn();
-    render(<LoginInput login={loginMock} />);
+    render(
+      <BrowserRouter>
+        <LoginInput login={loginMock} />
+      </BrowserRouter>,
+    );
     const emailInput = await screen.getByPlaceholderText('email');
     const passwordInput = await screen.getByPlaceholderText('password');
     const loginButton = await screen.getByRole('button', { name: 'Login' });
