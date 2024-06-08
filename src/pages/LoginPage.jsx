@@ -12,7 +12,7 @@ function LoginPage() {
       <div className="container">
         <div className="row">
           <div className="col-md-6">
-            <img src="/public/logo_xl.png" className="img-fluid" />
+            <img src="/logo_xl.png" className="img-fluid" />
           </div>
           <div className="col-md-6 contents">
             <div className="row justify-content-center">

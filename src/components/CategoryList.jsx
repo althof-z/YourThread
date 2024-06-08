@@ -19,7 +19,7 @@ function CategoryList({ categories, activeCategory, setActiveCategory }) {
           className="me-2 mb-3 "
 
         >
-          <button type="button" className={`btn btn-outline-dark ${category === activeCategory ? 'active-category' : ''}`} onClick={() => handleCategoryClick(category)}>
+          <button type="button" className={`btn btn-outline-dark category ${category === activeCategory ? 'active-category' : ''}`} onClick={() => handleCategoryClick(category)}>
             {' '}
             #
             {category}
