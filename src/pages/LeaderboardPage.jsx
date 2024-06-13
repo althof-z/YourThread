@@ -16,8 +16,8 @@ function LeaderboardPage() {
   return (
     <div>
       <section>
-        <div className="container my-3 text-body">
-          <h4 className="text-body mb-5">Leaderboard</h4>
+        <div className="container my-3 pb-3 text-white">
+          <h4 className="text-white mb-5">Leaderboard</h4>
           <div className=" row mb-2">
             <div className="col-1 " />
             <div className="col-9">
@@ -27,7 +27,9 @@ function LeaderboardPage() {
               <h3>Score</h3>
             </div>
           </div>
-          <LeaderboardList leaderboard={leaderboard} />
+          <div className="pb-5">
+            <LeaderboardList leaderboard={leaderboard} />
+          </div>
         </div>
       </section>
     </div>

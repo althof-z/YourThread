@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import api from '../../utils/api';
 
 const ActionType = {
@@ -17,8 +18,12 @@ function asyncRegisterUser({ name, email, password }) {
   return async () => {
     try {
       await api.register({ name, email, password });
+      toast.success('User registered successfully!');
+      return true; // Indicate success
     } catch (error) {
-      // show error message
+      // Show error message
+      toast.error(error.message);
+      return false; // Indicate failure
     }
   };
 }

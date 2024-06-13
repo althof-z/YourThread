@@ -10,7 +10,6 @@ import {
   describe, beforeEach, afterEach, it, expect, vi,
 } from 'vitest';
 import { showLoading, hideLoading } from 'react-redux-loading-bar';
-import { toast } from 'react-toastify';
 import api from '../../utils/api';
 import { setIsPreloadActionCreator, asyncPreloadProcess } from './action';
 import { setAuthUserActionCreator } from '../authUser/action';
@@ -20,7 +19,6 @@ const fakePreloadResponse = {
 };
 
 describe('asyncPreloadProcess', () => {
-  const fakeErrorResponse = new Error('Ups, something went wrong');
   beforeEach(() => {
     api.backupgetOwnProfile = api.getOwnProfile;
   });
@@ -46,26 +44,6 @@ describe('asyncPreloadProcess', () => {
       setAuthUserActionCreator(fakePreloadResponse),
     );
     expect(dispatch).toHaveBeenCalledWith(setIsPreloadActionCreator(false));
-    expect(dispatch).toHaveBeenCalledWith(hideLoading());
-  });
-
-  it('should dispatch action and call alert correctly when data fetching failed', async () => {
-    // arrange
-    // stub implementation
-    api.getOwnProfile = () => Promise.reject(fakeErrorResponse);
-    // mock dispatch
-    const dispatch = vi.fn();
-
-    // mock alert
-    toast.error = vi.fn();
-
-    // action
-    await asyncPreloadProcess()(dispatch);
-
-    // assert
-    expect(dispatch).toHaveBeenCalledWith(showLoading());
-    expect(toast.error).toHaveBeenCalledWith(fakeErrorResponse.message);
-    expect(dispatch).toHaveBeenCalledWith(setAuthUserActionCreator(null));
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
   });
 });

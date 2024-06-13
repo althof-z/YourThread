@@ -1,4 +1,5 @@
 import { showLoading, hideLoading } from 'react-redux-loading-bar';
+import { toast } from 'react-toastify';
 import api from '../../utils/api';
 
 const ActionTypes = {
@@ -72,6 +73,7 @@ function asyncCreateComment({ content, id }) {
       dispatch(createCommentActionCreator(comment));
     } catch (error) {
       // show error message
+      toast.error(error.message);
     }
     dispatch(hideLoading());
   };

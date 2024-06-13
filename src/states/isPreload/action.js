@@ -1,5 +1,4 @@
 import { hideLoading, showLoading } from 'react-redux-loading-bar';
-import { toast } from 'react-toastify';
 import api from '../../utils/api';
 import { setAuthUserActionCreator } from '../authUser/action';
 
@@ -25,7 +24,6 @@ function asyncPreloadProcess() {
       dispatch(setAuthUserActionCreator(authUser));
     } catch (error) {
       // fallback process
-      toast.error(error.message);
       dispatch(setAuthUserActionCreator(null));
     } finally {
       // end preload process
