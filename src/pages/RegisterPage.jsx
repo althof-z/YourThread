@@ -8,12 +8,13 @@ function RegisterPage() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const onRegister = ({ name, email, password }) => {
-    dispatch(asyncRegisterUser({ name, email, password }));
-    if (asyncRegisterUser) {
+  const onRegister = async ({ name, email, password }) => {
+    const isSuccess = await dispatch(asyncRegisterUser({ name, email, password }));
+    if (isSuccess) {
       navigate('/');
     }
   };
+
   return (
     <div className="content">
       <div className="container">

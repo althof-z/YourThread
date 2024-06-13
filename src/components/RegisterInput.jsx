@@ -38,18 +38,6 @@ function RegisterInput({ register }) {
           id="password"
         />
       </div>
-
-      <div className="d-flex mb-5 align-items-center">
-        <span className="control control--checkbox mb-0">
-          <span className="caption text-white">Remember me</span>
-          <input type="checkbox" />
-          <div className="control__indicator" />
-        </span>
-        <span className="ml-auto">
-          <p className="forgot-pass text-white">Forgot Password</p>
-        </span>
-      </div>
-
       <button
         type="button"
         className="btn btn-primary btn-block"

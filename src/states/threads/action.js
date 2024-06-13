@@ -1,4 +1,5 @@
 import { showLoading, hideLoading } from 'react-redux-loading-bar';
+import { toast } from 'react-toastify';
 import api from '../../utils/api';
 import { asyncGetCategories } from '../category/action';
 
@@ -67,6 +68,7 @@ function asyncCreateThread({ title, body, category = 'general' }) {
       dispatch(asyncGetCategories());
     } catch (error) {
       // show error message
+      toast.error(error.message);
     }
     dispatch(hideLoading());
   };
